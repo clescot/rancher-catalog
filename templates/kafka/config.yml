@@ -1,0 +1,4 @@
+name: "Kafka"
+description: "A high-throughput distributed messaging system."
+version: "0.8.2.2-rancher1"
+category: "Big Data"

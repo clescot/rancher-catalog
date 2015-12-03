@@ -1,0 +1,77 @@
+.catalog:
+  name: "Kafka"
+  version: "0.8.2.2-rancher1"
+  description: "A high-throughput distributed messaging system."
+  uuid: kafka-0
+  questions:
+    - variable: "auto_leader_rebalance"
+      description: "rebalance leader automatically when one node is introduced or removed"
+      label: "auto leader rebalance"
+      required: false
+      default: "true"
+      type: "boolean"
+    - variable: "auto_create_topics_enable"
+      description: "create topics if absent automatically"
+      label: "enable create topics"
+      required: false
+      default: "true"
+      type: "boolean"
+    - variable: "delete_topic_enable"
+      description: "enable topic deletion"
+      label: "define the ability to delete topic"
+      required: false
+      default: "false"
+      type: "boolean"
+    - variable: "port"
+      description: "define port open in the container"
+      label: "container port"
+      required: true
+      default: "9092"
+      type: "int"
+    - variable: "advertised port"
+      description: "define port accessible from outside the cluster"
+      label: "cluster port"
+      required: false
+      default: "9092"
+      type: "int"
+    - variable: "default_replication_factor"
+      description: "default replication factor applied when topic is created"
+      label: "set default replication factor"
+      required: false
+      default: "3"
+      type: "int"
+    - variable: "partitions"
+      description: "default partitions when topic is created"
+      label: "set default partitions when topic is created"
+      required: false
+      default: "3"
+      type: "int"
+    - variable: "log_retention_hours"
+      description: "define the default time when messages will be deleted if topic policy is delete"
+      label: "set default log retention hours"
+      required: false
+      default: "168"
+      type: "int"
+    - variable: "accessible_from_public_ip"
+      description: "define accessibility of the cluster"
+      label: "enable kafka cluster accesibility from a public IP address"
+      required: true
+      default: "false"
+      type: "boolean"
+    - variable: "log_cleaner_enable"
+      description: "enable log cleaner daemon used for compact topics."
+      label: "enable log cleaner"
+      required: true
+      default: "true"
+      type: "boolean"
+    - variable: "compression_type"
+      description: "define default compression type"
+      label: "define the default compression type"
+      required: false
+      default: "producer"
+      type: "boolean"
+
+kafka:
+  scale: 3
+  metadata:
+#    accessible_from_public_ip: true
